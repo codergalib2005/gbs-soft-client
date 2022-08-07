@@ -4,9 +4,17 @@ import saly1 from "../../assets/saly-1.png";
 import saly2 from "../../assets/saly-2.png";
 import { Link } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+
 
 const Register = () => {
   const [see, setSee] = useState(false);
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const onSubmit = data => {
+    console.log(data)
+    reset()
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.wrapper}>
@@ -29,15 +37,16 @@ const Register = () => {
             </p>
           </div>
         </div>
-        <form className={styles.body}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
           <div className={styles.input_group}>
             <label htmlFor="email">
-              <p>Email as username</p>
+              <p>Email</p>
               <input
+                className={errors.email && "field_error"}
+                {...register("email", { required: true })}
                 type="email"
-                name="email"
                 id="email"
-                placeholder="Email as username"
+                placeholder="Email"
               />
             </label>
           </div>
@@ -46,8 +55,9 @@ const Register = () => {
               <label htmlFor="first_name">
                 <p>First Name</p>
                 <input
+                  className={errors.first_name && "field_error"}
                   type="text"
-                  name="first_name"
+                  {...register("first_name", { required: true })}
                   id="first_name"
                   placeholder="First Name"
                 />
@@ -57,8 +67,9 @@ const Register = () => {
               <label htmlFor="last_name">
                 <p>Last Name</p>
                 <input
+                  className={errors.last_name && "field_error"}
                   type="text"
-                  name="last_name"
+                  {...register("last_name", { required: true })}
                   id="last_name"
                   placeholder="Last Name"
                 />
@@ -69,10 +80,11 @@ const Register = () => {
             <label htmlFor="phone">
               <p>Contact Number</p>
               <input
+                className={errors.phone && "field_error"}
                 type="tel"
                 id="phone"
-                name="phone"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                {...register("phone", { required: true })}
+                // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                 placeholder="Contact Number"
               />
             </label>
@@ -82,8 +94,9 @@ const Register = () => {
               <p>Password</p>
               <div className={styles.password_field}>
                 <input
+                  className={errors.password && "field_error"}
                   type={see ? "text" : "password"}
-                  name="password"
+                  {...register("password", { required: true })}
                   id="password"
                   placeholder="Password"
                 />

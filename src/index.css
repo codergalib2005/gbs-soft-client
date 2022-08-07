@@ -52,3 +52,6 @@ code {
   background-clip: text;
   -webkit-background-clip: text;
 }
+.field_error{
+  border-color: #e83a3b !important;
+}

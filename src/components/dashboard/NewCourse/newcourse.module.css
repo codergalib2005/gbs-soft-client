@@ -1,0 +1,108 @@
+.add_page {
+  padding-bottom: 3rem;
+}
+.input_group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-default);
+  padding: 0.4rem;
+  background: var(--color-white);
+  border-radius: 5px;
+}
+.input_group label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+.input_group textarea {
+  font-size: 14px;
+  padding: 0.4rem;
+  outline: none;
+  border: none;
+}
+textarea[name="title"] {
+  font-size: 1.4rem;
+}
+.three_col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+select {
+  outline: none;
+  border: none;
+  font-size: 1.1rem;
+}
+option {
+  font-size: 1.1rem;
+}
+input {
+  outline: none;
+  border: none;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--color-gray);
+  width: 100%;
+}
+.card {
+  display: flex;
+}
+.card span {
+  font-size: 1rem;
+  display: block;
+  width: 198px;
+  color: var(--color-dark);
+}
+.card .disabled {
+  color: var(--color-gray);
+}
+.two_col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+.requirements ul {
+  list-style: circle;
+  padding-left: 1.5rem;
+}
+.requirements .requirement_form {
+  display: flex;
+  align-items: stretch;
+  box-shadow: var(--shadow-default);
+  margin-top: 0.4rem;
+  /* border-top: 1px solid var(--color-gray); */
+}
+strong {
+  font-size: 1rem;
+  color: var(--color-black);
+  font-weight: 600;
+}
+.requirements .requirement_form button {
+  background: var(--color-primary-deep);
+  width: 80px;
+  height: 40px;
+  font-size: 22px;
+  color: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.course_add {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  background: var(--color-primary-deep);
+  outline: none;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 50px;
+  cursor: pointer;
+}

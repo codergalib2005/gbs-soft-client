@@ -1,0 +1,72 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+.card_parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--color-primary-deep);
+  overflow: hidden;
+}
+.image_parent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+img{
+  max-width: 100%;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+}
+.image_cropper {
+  /* Image shape */
+  border-radius: 25% 75% / 50%;
+  cursor: help;
+  /* Add background image */
+  background-image: url(https://thumbs.gfycat.com/AromaticEverlastingGoldenmantledgroundsquirrel-max-1mb.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 400px;
+
+  /* Text background remove and add border */
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Steelfish Rg", "helvetica neue", helvetica, arial, sans-serif;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+
+
+  /* Extra styles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.enroll{
+  text-align: center;
+}
+.enroll button{
+  background: var(--color-white);
+  color: var(--color-primary-deep);
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}

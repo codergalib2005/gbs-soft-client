@@ -1,0 +1,20 @@
+.body {
+  padding: 1rem;
+  padding-left: 266px;
+  overflow-y: scroll;
+  width: 100%;
+  background: var(--color-bs-gray);
+  height: 100vh;
+}
+.body::-webkit-scrollbar {
+  width: 10px;
+}
+.body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.body::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

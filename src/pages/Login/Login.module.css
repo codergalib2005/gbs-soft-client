@@ -85,7 +85,7 @@
   color: var(--color-primary-deep);
 }
 form {
-  margin-top: 2rem;
+  margin-top: 0.7rem;
 }
 .body label {
   width: 100%;
@@ -187,4 +187,13 @@ form {
 }
 .social_wrapper button:nth-child(3) {
   color: #111;
+}
+.error{
+  margin-top: 10px;
+  background: #e83a3b;
+  padding: 0.3rem 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 50px;
+  cursor:grab;
 }

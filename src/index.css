@@ -47,11 +47,17 @@ code {
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 .background-clipped-to-text {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 }
-.field_error{
+.field_error {
   border-color: #e83a3b !important;
 }

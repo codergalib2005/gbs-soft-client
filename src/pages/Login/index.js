@@ -5,9 +5,23 @@ import saly2 from "../../assets/saly-2.png";
 import { Link } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash, FaFacebook, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 
 const Login = () => {
+  const [error, setError] = useState("");
   const [see, setSee] = useState(false);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("/sign_in", data);
+      localStorage.setItem("gbs_course_token", response.data.token)
+    }
+    catch ({ response }) {
+      setError(response.data.message);
+    }
+  };
   return (
     <div className={styles.main}>
       <div className={styles.wrapper}>
@@ -30,15 +44,17 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <form className={styles.body}>
+        {error && <div onClick={() => setError("")} className={styles.error}>{error}</div>}
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
           <div className={styles.input_group}>
-            <label htmlFor="username">
-              <p>username</p>
+            <label htmlFor="email">
+              <p>E-mail</p>
               <input
-                type="username"
-                name="username"
-                id="username"
-                placeholder="username"
+                className={errors.email && "field_error"}
+                type="email"
+                {...register("email", { required: true })}
+                id="email"
+                placeholder="E-mail"
               />
             </label>
           </div>
@@ -47,8 +63,9 @@ const Login = () => {
               <p>Password</p>
               <div className={styles.password_field}>
                 <input
+                  className={errors.password && "field_error"}
                   type={see ? "text" : "password"}
-                  name="password"
+                  {...register("password", { required: true })}
                   id="password"
                   placeholder="Password"
                 />

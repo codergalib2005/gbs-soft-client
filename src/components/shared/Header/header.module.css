@@ -1,0 +1,107 @@
+.header {
+  height: 80px;
+}
+.container {
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+.header .logo {
+  width: 200px;
+  height: 190px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  border-radius: 0 100px 350px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.header ul {
+  display: flex;
+  padding-left: 200px;
+  align-items: center;
+}
+.header ul li {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  padding-right: 1.3rem;
+}
+.header ul li a {
+  color: #3b9ae1;
+}
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menus .buttons {
+  display: flex;
+  align-items: center;
+}
+.menus .login {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  background: none;
+  color: var(#091624);
+  cursor: pointer;
+}
+.menus .login svg {
+  font-size: 1.3rem;
+  margin-right: 0.4rem;
+}
+button.profile_button {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+  border-radius: 50px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 119, 255, 0.3) 0px 0px 0px 3px;
+}
+button.profile_button img {
+  min-height: 100%;
+  width: 110%;
+}
+.profile_button_parent {
+  position: relative;
+}
+.profile_button_parent .menus {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  /* background: var(--color-white); */
+  z-index: 900;
+}
+.profile_button_parent .toggle_buttons {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.toggle_button {
+  width: 100%;
+}
+.toggle_button a {
+  padding: 0.4rem 0.4rem;
+  display: block;
+  margin-top: 0.2rem;
+  box-shadow: rgba(46, 201, 240, 0.4) -5px 5px,
+    rgba(46, 162, 240, 0.3) -10px 10px, rgba(46, 195, 240, 0.2) -15px 15px,
+    rgba(46, 211, 240, 0.1) -20px 20px, rgba(46, 179, 240, 0.05) -25px 25px;
+  background: var(--color-white);
+  margin-top: 0.8rem;
+  color: var(--color-primary-deep);
+}

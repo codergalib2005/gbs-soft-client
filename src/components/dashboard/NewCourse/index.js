@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './newcourse.module.css';
 import { IoMdAdd } from 'react-icons/io';
+import axios from 'axios';
 
 const NewCourse = () => {
     const [paid, setPaid] = useState("paid");
@@ -41,11 +42,23 @@ const NewCourse = () => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log({
-            learns,
-            requirements,
-            fields: data
-        })
+        try {
+            console.log({
+                learns,
+                requirements,
+                fields: data,
+                paid
+            })
+            const response = await axios.post("/course/add_course", {
+                learns,
+                requirements,
+                fields: data,
+                paid
+            })
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
         <div className={styles.add_page}>
@@ -57,9 +70,9 @@ const NewCourse = () => {
                     </textarea>
                 </div>
                 <div className={styles.input_group}>
-                    <textarea onChange={changeField} name="course_subtitle"
-                        id="subtitle" rows="3"
-                        placeholder='Course subtitle'>
+                    <textarea onChange={changeField} name="course_instractor"
+                        id="instractor" rows="3"
+                        placeholder='Course instractor'>
                     </textarea>
                 </div>
                 <div className={styles.input_group}>

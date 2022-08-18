@@ -2,17 +2,31 @@ import React, { useState } from "react";
 import styles from "./Register.module.css";
 import saly1 from "../../assets/saly-1.png";
 import saly2 from "../../assets/saly-2.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+
 
 
 const Register = () => {
   const [see, setSee] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  const onSubmit = data => {
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const [error, setError] = useState("");
+  const location = useNavigate();
+  console.log(location)
+  const onSubmit = async (data) => {
     console.log(data)
-    reset()
+    try {
+      const response = await axios.post("/sign_up", data);
+      console.log(response);
+      location("/login");
+      reset();
+    }
+    catch (error) {
+      setError(error.response.data.message)
+    }
+    // reset()
   };
 
   return (
@@ -37,6 +51,7 @@ const Register = () => {
             </p>
           </div>
         </div>
+        {error && <div onClick={() => setError("")} className={styles.error}>{error}</div>}
         <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
           <div className={styles.input_group}>
             <label htmlFor="email">
@@ -96,7 +111,7 @@ const Register = () => {
                 <input
                   className={errors.password && "field_error"}
                   type={see ? "text" : "password"}
-                  {...register("password", { required: true })}
+                  {...register("password", { required: true, minLength: 6 })}
                   id="password"
                   placeholder="Password"
                 />

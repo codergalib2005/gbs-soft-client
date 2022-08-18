@@ -141,3 +141,12 @@ form.body {
   height: 50px;
   cursor: pointer;
 }
+.error{
+  margin-top: 10px;
+  background: #e83a3b;
+  padding: 0.3rem 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 50px;
+  cursor:grab;
+}

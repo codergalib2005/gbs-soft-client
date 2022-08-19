@@ -9,6 +9,7 @@ import { authorization, token } from "./API";
 import axios from "axios";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
+import UserDashboard from "./pages/UserDashboard";
 
 
 export const UserToken = createContext();
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="enroll" element={<EnrollCourse />} />
           <Route path="courses" element={<Courses />} />
           <Route path="dashboard/*" element={<Dashboard />} />
+          <Route path="user/dashboard/*" element={<UserDashboard />} />
         </Routes>
       </BrowserRouter>
     </UserToken.Provider>

@@ -69,7 +69,7 @@ const Header = () => {
                                             <Link to="/profile">Profile</Link>
                                         </div>
                                         <div className={styles.toggle_button}>
-                                            <Link to="/profile">Dashboard</Link>
+                                            <Link to="/user/dashboard">Dashboard</Link>
                                         </div>
                                         <div className={styles.toggle_button}>
                                             <Link to="/profile">My Courses</Link>

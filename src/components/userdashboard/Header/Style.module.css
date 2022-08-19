@@ -1,0 +1,46 @@
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+.header_ride_side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.icon_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon_buttons button {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-primary-deep);
+  background: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.profile_image_button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--color-white);
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  cursor: pointer;
+}
+.profile_image_button img {
+  width: 100%;
+  min-height: 100%;
+}

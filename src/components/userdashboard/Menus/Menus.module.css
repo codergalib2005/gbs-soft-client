@@ -1,21 +1,41 @@
-.sidebar{
-    /* padding: 1rem; */
-    height: 100%;
-    background: var(--color-white);
+.sidebar {
+  /* padding: 1rem; */
+  height: 100%;
+  background: var(--color-white);
 }
-.sidebar a{
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--color-primary-deep);
-    background: var(--color-white);
-    width: 100%;
-    display: block;
-    padding-left: 1rem;
-    display: flex;
-    align-items: center;
-    padding: 0.3rem 0;
-    cursor: pointer;
+.image_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
 }
-.sidebar a:hover{
-    background: var(--color-bs-gray);
+.profile_image_cover {
+  width: 130px;
+  height: 130px;
+  border: 5px solid var(--color-white);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile_image_cover img {
+  width: 100%;
+  min-height: 100%;
+}
+/* Sidebar menus */
+.sidebar a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-primary-deep);
+  background: var(--color-white);
+  width: 100%;
+  display: block;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  background: var(--color-bs-gray);
 }
